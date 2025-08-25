@@ -2,13 +2,15 @@ import { defineConfig, devices } from "@playwright/test";
 
 const browsers = ["Desktop Chrome"];
 const appUrl = "http://localhost:3000";
+// process.env.NEXT_PUBLIC_URL will give `undefined` if used for above.
+// For better approach, we can utilize dotenv library to import .env.
 
 export default defineConfig({
   testDir: "./tests",
   // Run all tests in parallel.
   fullyParallel: true,
   reporter: "html",
-  // Run local dev server before starting the tests.
+  // Ensure local dev server is running before starting the tests.
   webServer: {
     command: "npm run dev",
     url: appUrl,

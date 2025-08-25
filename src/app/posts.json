@@ -2,13 +2,19 @@
   {
     "id": "post-a",
     "slug": "/2025/08/99/post-a",
-    "title": "Title of Post A",
-    "contentHTML": "<p>Main content of Post A</p><button class='button'>Detail</button>"
+    "title": "Post A",
+    "contentHTML": "<p>Main content of Post A</p><button class='button'>Apply Now!</button><p class='footer-text'>Published on Aug 99, 2025</p>"
   },
   {
     "id": "post-b",
     "slug": "/2025/08/99/post-b",
-    "title": "Title of Post B",
-    "contentHTML": "<p>Main content of Post B</p><button class='button' style='margin-block: 1.25rem;'>Detail</button>"
+    "title": "Post B",
+    "contentHTML": "<p>Main content of Post B</p><button class='button' style='margin-block: 1.25rem;'>Apply Now!</button><p class='footer-text'>Published on Aug 99, 2025</p>"
+  },
+  {
+    "id": "post-c",
+    "slug": "/2025/08/99/post-c",
+    "title": "Post C",
+    "contentHTML": "<p>Main content of Post C with some longer text that spans multiple lines to make layout differences more obvious</p><div class='button-group'><button class='button'>Apply Now!</button><button class='button secondary'>Share</button></div><p class='footer-text'>Published on Aug 99, 2025</p>"
   }
 ]

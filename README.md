@@ -1,14 +1,44 @@
-# Example of Visual Regression Test in Next.js
+# Visual Regression Testing with Next.js & Playwright
 
-## What to do?
+## Why Visual Regression Testing?
 
-1. Install dependencies with npm and run the development server
-2. Access 'Title of Post A' and fix the spacing between 'Detail' button with its above paragraph, by editing /public/article.css
-3. Access 'Title of Post B' to see the desired visual
-4. Do your changes also affect the styles of ‘Title of Post B’? this is where below tests come in to play
+Ever worried that fixing CSS in one place might break the styling somewhere else? With hundreds of articles or pages, manually checking every page after a style change isn't practical.
 
-## How to Run Tests?
+Visual regression testing automatically captures screenshots of your pages and compares them against reference images, catching unintended visual changes before they reach production.
 
-1. Install headless browsers required by Playwright with `npx playwright install`
-2. Simply run the test with `npm test`. This will give a failing test, because there is no snapshot or screenshot created yet, just re-run the test.
-3. If we are happy with the result, save it with `npm run test-update`
+## Demo Scenario
+
+This example simulates a common real-world problem:
+
+1. **The Issue**: Post A's button has no spacing and looks cramped
+2. **The Challenge**: Fix Post A without breaking Posts B and C, just by editing /public/article.css
+3. **Expectation**: Only Post A that has failing test result but with intended visual updates (1 failed, 2 passed)
+4. **Try it**: Make your CSS fix, run tests, and see what breaks!
+
+## Getting Started
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Install Playwright browsers
+npx playwright install
+
+# Start dev server (optional - tests will auto-start it)
+npm run dev
+```
+
+### Running Tests
+
+```bash
+# First run - generates initial screenshots (will fail if there are no screenshots)
+npm test
+
+# Re-run to verify tests pass with baseline screenshots
+npm test
+
+# Update screenshots if you are satisfied with the result you have made
+npm run test-update
+```

@@ -3,23 +3,22 @@ import posts from "@/app/posts.json";
 
 const postPaths = posts.map((post) => post.slug);
 
-async function waitUntilPageIsDrawn(page: Page) {
+async function waitUntilPageIsRedrawn(page: Page) {
   await page.waitForLoadState("networkidle");
-  // wait for the injected stuffs
+  // wait until some injected nodes exists in DOM
   await page.waitForSelector('link[href*="article.css"]', {
     timeout: 5000,
     state: "attached",
   });
   // wait for fonts to be ready
   await page.evaluate(() => document.fonts.ready);
-  // delay for painting
-  await page.waitForTimeout(1000);
 }
 
-test("A post detail page", async ({ page }) => {
-  postPaths.forEach(async (path) => {
+// Generate individual test for each post to avoid stopping on first failure
+for (const path of postPaths) {
+  test(`Page ${path}`, async ({ page }) => {
     await page.goto(path);
-    await waitUntilPageIsDrawn(page);
+    await waitUntilPageIsRedrawn(page);
     await expect(page).toHaveScreenshot();
   });
-});
+}

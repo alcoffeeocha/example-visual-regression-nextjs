@@ -1,6 +1,26 @@
 .button {
-  display: inline-block;
+  display: block;
   padding: 6px 18px;
-
+  background: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.button.secondary {
+  background: #6c757d;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
 }

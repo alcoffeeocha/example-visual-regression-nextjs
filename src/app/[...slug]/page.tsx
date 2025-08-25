@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { API, APP } from "../lib";
 import { Post } from "../types";
 import ArticleContentRenderer from "../components/ArticleContentRenderer";
+import Link from "next/link";
 
 interface PostPageProps {
   params: {
@@ -30,6 +31,7 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
         <h1>{data.title}</h1>
         <ArticleContentRenderer content={data.contentHTML} />
       </article>
+      <Link href="/">← Back</Link>
     </main>
   );
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "post-a",
+    "slug": "/2025/08/99/post-a",
+    "title": "Title of Post A",
+    "contentHTML": "<p>Main content of Post A</p><button class='button'>Detail</button>"
+  },
+  {
+    "id": "post-b",
+    "slug": "/2025/08/99/post-b",
+    "title": "Title of Post B",
+    "contentHTML": "<p>Main content of Post B</p><button class='button' style='margin-block: 1.25rem;'>Detail</button>"
+  }
+]

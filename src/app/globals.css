@@ -30,13 +30,33 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+main {
+  min-height: 100svh;
+}
+
+h1 {
+  margin-bottom: 1.75rem;
+}
+
+.centered {
+  display: grid;
+  place-items: center;
+}
+
+.default-list {
+  list-style-type: none;
+}
+
+.default-list-item {
+  margin-bottom: 0.75rem;
+}
+
+.default-list-item:last-child {
+  margin-bottom: 0;
 }
